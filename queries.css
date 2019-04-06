@@ -26,11 +26,12 @@
 
 /* Small phones to small tablets: from 600px to 768px */
 @media only screen and (max-width: 768px) {
-    #text-section .fly-in-text li {
+    #home-section .fly-in-text li {
         font-size: 2em;
     }
     .navbar .navbar-brand img {
-        height: 17px;
+        height: 55px;
+        width: auto;
     }
 }
 
