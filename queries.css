@@ -20,24 +20,29 @@
 
 /* Small tablet to big tablet: from 769px to 933px */ 
 @media only screen and (max-width:933px) {
-   
+   #home-section .fly-in-text li {
+        font-size: 3.5em;
+    }
 
 }
 
 /* Small phones to small tablets: from 600px to 768px */
 @media only screen and (max-width: 768px) {
     #home-section .fly-in-text li {
-        font-size: 2em;
+        font-size: 3em;
     }
     .navbar .navbar-brand img {
         height: 55px;
         width: auto;
     }
+    #text-section h2 {
+        font-size: 30px;
+    }
 }
 
 /* Small phones to small tablets: from 481px to 600px */
 @media only screen and (max-width: 600px) {
-    
+
 
 }
 
@@ -81,7 +86,11 @@
 
 /* Small phones: from 0 to 320px */
 @media only screen and (max-width: 320px) {
-   
-
+    #home-section .fly-in-text li {
+        font-size: 2em;
+    }
+    #home-section .home-btns a {
+        margin-bottom: 15px;
+    }
 
 }
