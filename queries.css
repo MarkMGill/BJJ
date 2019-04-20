@@ -38,18 +38,30 @@
     #text-section h2 {
         font-size: 30px;
     }
+    #facility-section .facility-content h2 {
+        font-size: 42px;
+    }
 }
 
 /* Small phones to small tablets: from 481px to 600px */
 @media only screen and (max-width: 600px) {
-
+    #facility-section .facility-content h2 {
+        font-size: 34px;
+    }
 
 }
 
 /* Small phones: from 480 to 530px */
 @media only screen and (max-width: 530px) {
-    
-
+    #facility-section .facility-content h2 {
+        font-size: 28px;
+    }
+    #facility-section .facility-content h4 {
+        font-size: 24px;
+    }
+    #facility-section .facility-content .btn {
+        font-size: 16px;
+    }
 }
 
 
@@ -67,7 +79,12 @@
 
 /* Small phones: from 0 to 430px */
 @media only screen and (max-width: 392px) {
-   
+   #facility-section .facility-content h2 {
+        font-size: 24px;
+    }
+    #facility-section .facility-content h4 {
+        font-size: 20px;
+    }
 }
 
 /* Small phones: from 0 to 430px */
@@ -81,7 +98,15 @@
 }
 /* Small phones: from 0 to 430px */
 @media only screen and (max-width: 368px) {
-    
+    #facility-section .facility-content h2 {
+        font-size: 22px;
+    }
+    #facility-section .facility-content h4 {
+        font-size: 18px;
+    }
+    #facility-section .facility-content .btn {
+        font-size: 13px;
+    }
 }
 
 /* Small phones: from 0 to 320px */

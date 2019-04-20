@@ -8,7 +8,7 @@ body {
 }
 
 #home-section {
-    background-image: url(BJJ2.jpg);
+    background-image: url(CSS/img/BJJ2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -40,12 +40,14 @@ body {
     width: 90%;
     left: 50%;
     top: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
 }
 
 #home-section .fly-in-text li {
     display: inline-block;
     opacity: 1;
+    -webkit-transition: all 2.5s ease;
     transition: all 2.5s ease;
     font-size: 4em;
     line-height: 1em;
@@ -66,31 +68,32 @@ body {
 
 #home-section .fly-in-text.hidden li:nth-child(1),
 #home-section .fly-in-text.hidden li:nth-child(8),
-#home-section .fly-in-text.hidden li:nth-child(15){ transform: translateX(-200px) translateY(-200px)}
+#home-section .fly-in-text.hidden li:nth-child(15){ -webkit-transform: translateX(-200px) translateY(-200px); transform: translateX(-200px) translateY(-200px)}
 #home-section .fly-in-text.hidden li:nth-child(2),
 #home-section .fly-in-text.hidden li:nth-child(9),
-#home-section .fly-in-text.hidden li:nth-child(16){ transform: translateX(20px) translateY(100px)}
+#home-section .fly-in-text.hidden li:nth-child(16){ -webkit-transform: translateX(20px) translateY(100px); transform: translateX(20px) translateY(100px)}
 #home-section .fly-in-text.hidden li:nth-child(3),
 #home-section .fly-in-text.hidden li:nth-child(10),
-#home-section .fly-in-text.hidden li:nth-child(17){ transform: translateX(-150px) translateY(-80px)}
+#home-section .fly-in-text.hidden li:nth-child(17){ -webkit-transform: translateX(-150px) translateY(-80px); transform: translateX(-150px) translateY(-80px)}
 #home-section .fly-in-text.hidden li:nth-child(4),
 #home-section .fly-in-text.hidden li:nth-child(11),
-#home-section .fly-in-text.hidden li:nth-child(18){ transform: translateX(10px) translateY(-200px)}
+#home-section .fly-in-text.hidden li:nth-child(18){ -webkit-transform: translateX(10px) translateY(-200px); transform: translateX(10px) translateY(-200px)}
 #home-section .fly-in-text.hidden li:nth-child(5),
 #home-section .fly-in-text.hidden li:nth-child(12),
-#home-section .fly-in-text.hidden li:nth-child(19){ transform: translateX(-300px) translateY(200px)}
+#home-section .fly-in-text.hidden li:nth-child(19){ -webkit-transform: translateX(-300px) translateY(200px); transform: translateX(-300px) translateY(200px)}
 #home-section .fly-in-text.hidden li:nth-child(6),
 #home-section .fly-in-text.hidden li:nth-child(13),
-#home-section .fly-in-text.hidden li:nth-child(20){ transform: translateX(20px) translateY(-20px)}
+#home-section .fly-in-text.hidden li:nth-child(20){ -webkit-transform: translateX(20px) translateY(-20px); transform: translateX(20px) translateY(-20px)}
 #home-section .fly-in-text.hidden li:nth-child(7),
 #home-section .fly-in-text.hidden li:nth-child(14),
-#home-section .fly-in-text.hidden li:nth-child(21){ transform: translateX(30px) translateY(200px)}
+#home-section .fly-in-text.hidden li:nth-child(21){ -webkit-transform: translateX(30px) translateY(200px); transform: translateX(30px) translateY(200px)}
 
 #home-section .home-btns {
     position: absolute;
     width: 90%;
     left: 100%;
     top: 80%;
+    -webkit-transform: translateX(-100%) translateY(-80%);
     transform: translateX(-100%) translateY(-80%);
     text-transform: uppercase;
 }
@@ -124,3 +127,59 @@ body {
     width: 100%;
 }
 
+/*****************************/
+/***** FACILITY SECTION ******/
+/*****************************/
+
+
+#facility-section {
+    height: 100vh;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    height: 500px;
+    width: 100%;
+}
+
+#facility-section .fullscreen-video-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+#facility-section .fullscreen-video-wrap video {
+    min-width: 100%;
+    min-width: 100%;
+    margin-top: -25px;
+}
+
+#facility-section .facility-overlay {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000;
+    z-index: 1;
+    opacity: 0.6;
+}
+
+#facility-section .facility-content {
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+    
+#facility-section .facility-content h2 {
+    white-space: nowrap;
+    font-weight: 700;
+}
+
+  
+    
+    
+    
