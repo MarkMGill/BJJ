@@ -1,6 +1,12 @@
 [
     {   
         "day": "Monday",
+        "time": "6:00AM - 7:30AM",
+        "classType": "BJJ - Adult", 
+        "instructor": "Sensei Zachary"
+    },
+    {   
+        "day": "Monday",
         "time": "6:00PM - 7:30PM",
         "classType": "BJJ - Adult", 
         "instructor": "Sensei Mark"
@@ -10,6 +16,12 @@
         "time": "6:00PM - 7:30PM",
         "classType": "MMA", 
         "instructor": "Sensei Mark"
+    },
+    {
+        "day": "Wednesday",
+        "time": "6:00AM - 7:30AM",
+        "classType": "BJJ - Kids", 
+        "instructor": "Sensei Colin"
     },
     {
         "day": "Wednesday",

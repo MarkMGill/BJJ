@@ -120,28 +120,40 @@ function loadText() {
             var response = JSON.parse(xhr.responseText);
             console.log(response);
             var scheduleText = '';
+            var checkDay = '';
             for(var i in response) {
-                console.log(response[i].time);
-                
+                if(checkDay === response[i].day){
+                    checkDay = response[i].day;
                     scheduleText += 
-                        '<div class="card mb-3">' +
-                            '<div class="card-header" id="scheduleDay">' + response[i].day + '</div>' +
-                                '<div class="card-body" id="scheduleInfo">' +
-                                    '<div class="float-left">' +
-                                        '<p class="card-title" id="scheduleTime">' + response[i].time + '</p>' +
-                                        '<p class="card-text" id="scheduleClass">' + response[i].classType + '</p>' +
-                                        '<p class="card-text" id="scheduleInstructor">' + response[i].instructor + '</p>' +
-                                    '</div>' +
-                                    '<a href="#" class="btn btn-danger float-right">Sign Up</a>' +
-                                '</div>' + 
+                        '<div class="card">' +
+                            '<div class="card-body" id="scheduleInfo">' +
+                                '<div class="float-left">' +
+                                    '<p class="card-title" id="scheduleTime">' + response[i].time + '</p>' +
+                                    '<p class="card-text" id="scheduleClass">' + response[i].classType + '</p>' +
+                                    '<p class="card-text" id="scheduleInstructor">' + response[i].instructor + '</p>' +
+                                '</div>' +
+                                '<a href="#" class="btn btn-danger float-right">Sign Up</a>' +
                             '</div>' +
                         '</div>';
-                    
-                
+                } else {
+                    checkDay = response[i].day;
+                    scheduleText += 
+                    '<div class="card mt-3">' +
+                        '<div class="card-header" id="scheduleDay">' + response[i].day + '</div>' +
+                            '<div class="card-body" id="scheduleInfo">' +
+                                '<div class="float-left">' +
+                                    '<p class="card-title" id="scheduleTime">' + response[i].time + '</p>' +
+                                    '<p class="card-text" id="scheduleClass">' + response[i].classType + '</p>' +
+                                    '<p class="card-text" id="scheduleInstructor">' + response[i].instructor + '</p>' +
+                                '</div>' +
+                                '<a href="#" class="btn btn-danger float-right">Sign Up</a>' +
+                            '</div>' + 
+                        '</div>' +
+                    '</div>';
+                }
             }
             scheduleInfo.innerHTML = scheduleText;
-            }
-            
+        }
     }
     
     xhr.onerror = function() {
