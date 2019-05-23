@@ -134,7 +134,8 @@ function loadText() {
                                     '</div>' +
                                     '<a href="#" class="btn btn-danger float-right">Sign Up</a>' +
                                 '</div>' + 
-                            '</div>'
+                            '</div>' +
+                        '</div>';
                     
                 
             }
