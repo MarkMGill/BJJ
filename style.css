@@ -21,7 +21,7 @@ body {
   position: relative;
   height: 400px;
   width: 100%;
-  background-image: url(../CSS/img/BJJ2.jpg);
+  background-image: url(BJJ2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -165,7 +165,7 @@ body {
 /******* SCHEDULE PAGE *******/
 /*****************************/
 #schedule-header {
-  background: url(../CSS/img/BJJ5.jpg);
+  background: url(BJJ5.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 500px; }
@@ -181,113 +181,4 @@ body {
       font-weight: 400; }
     #schedule-header .schedule-inner h5 {
       font-size: 1.5em; }
-
-/*
-
-[
-    {   
-        "day": "Monday",
-        "time": ["6:00PM - 7:30PM"],
-        "classType": ["BJJ - Adult"], 
-        "instructor": ["Sensei Mark"]
-    },
-    {
-        "day": "Tuesday",
-        "time": ["6:00PM - 7:30PM"],
-        "classType": ["MMA"], 
-        "instructor": ["Sensei Mark"]
-    },
-    {
-        "day": "Wednesday",
-        "time": ["12:00PM - 1:30PM", "6:00PM - 7:30PM"],
-        "classType": ["BJJ - Kids", "MMA Sparring"], 
-        "instructor": ["Sensei Mark", "Sensei Mark"]
-    },
-    {
-        "day": "Thursday",
-        "time": ["6:00PM - 7:30PM"],
-        "classType": ["BJJ - Adult"], 
-        "instructor": ["Sensei Mark"]
-    },
-    {
-        "day": "Friday",
-        "time": ["6:00PM - 7:30PM"],
-        "classType": ["BJJ - Adult"], 
-        "instructor": ["Sensei Mark"]
-    },
-    {
-        "day": "Saturday",
-        "time": ["11:00AM - 1:00PM"],
-        "classType": ["BJJ - Adult Open Mat"], 
-        "instructor": ["Sensei Mark"]
-    },
-    {
-        "day": "Sunday",
-        "time": ["11:00AM - 1:00PM"],
-        "classType": ["BJJ - Adult Open Mat"], 
-        "instructor": ["Sensei Mark"]
-    }
-    
-]
-
-{
-    "Monday": [
-        {
-            "time": "6:00PM - 7:30PM",
-            "classType": "BJJ - Adult", 
-            "instructor": "Sensei Mark"
-        }
-    ],
-    "Tuesday": [
-        {
-            "time": "6:00PM - 7:30PM",
-            "classType": "MMA", 
-            "instructor": "Sensei Mark"
-        }
-    ],
-    "Wednesday": [
-        {
-            "time": "12:00PM - 1:30PM",
-            "classType": "BJJ - Kids", 
-            "instructor": "Sensei Mark"
-        },
-        {
-            "time": "6:00PM - 7:30PM",
-            "classType": "MMA Sparring", 
-            "instructor": "Sensei Mark"
-        }
-    ],
-    "Thursday": [
-        {
-            "time": "6:00PM - 7:30PM",
-            "classType": "BJJ - Adult", 
-            "instructor": "Sensei Mark"
-        }
-    ],
-    "Friday": [
-        {
-            "time": "6:00PM - 7:30PM",
-            "classType": "BJJ - Adult", 
-            "instructor": "Sensei Mark"
-        }
-    ],
-    "Saturday": [
-        {
-            "time": "11:00AM - 1:00PM",
-            "classType": "BJJ - Adult Open Mat", 
-            "instructor": "Sensei Mark"
-        }
-    ],
-    "Sunday": [
-        {
-            "time": "11:00AM - 1:00PM",
-            "classType": "BJJ - Adult Open Mat", 
-            "instructor": "Sensei Mark"
-        }
-    ]
 }
-
-
-
-
-*/
