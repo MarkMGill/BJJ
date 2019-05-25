@@ -41,6 +41,12 @@
     #facility-section .facility-content h2 {
         font-size: 42px;
     }
+    #schedule-header .schedule-inner h2 {
+        font-size: 3em;
+    }
+    #schedule-header .schedule-inner h5 {
+        font-size: 1.25em; 
+    }
 }
 
 /* Small phones to small tablets: from 481px to 600px */
@@ -116,6 +122,9 @@
     }
     #home-section .home-btns a {
         margin-bottom: 15px;
+    }
+    #calendar-body {
+        font-size: 14px;
     }
 
 }

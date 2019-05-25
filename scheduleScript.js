@@ -5,6 +5,7 @@
 // Get the current year for the copyright
 $('#year').text(new Date().getFullYear());
 
+/*********** DISPLAY CALENDAR ************/
 
 // Calendar
 let today = new Date();
@@ -46,9 +47,9 @@ function showCalendar(month, year) {
                 let curMonth = today.getMonth();
                 let curYear = today.getFullYear();
                 if(todayDate === date && curMonth === currentMonth && curYear === currentYear) {
-                    cell.setAttribute('class', 'bg-light ' + daysOfWeek[counter]);
+                    cell.setAttribute('class', 'bg-light day ' + daysOfWeek[counter]);
                 } else {
-                    cell.setAttribute('class', daysOfWeek[counter]);
+                    cell.setAttribute('class', 'day ' + daysOfWeek[counter]);
                 }
                 let cellText = document.createTextNode(date);
                 cell.appendChild(cellText);
@@ -76,41 +77,20 @@ function next() {
     showCalendar(currentMonth, currentYear);
 }
 
+
+/*********** DISPLAY CLASS SCHEDULE ************/
+
 var scheduleDay = document.getElementById('scheduleDay');
 var scheduleInfo = document.getElementById('scheduleInfo');
 var scheduleTime = document.getElementById('scheduleTime');
 var scheduleClass = document.getElementById('scheduleClass');
 var scheduleInstructor = document.getElementById('scheduleInstructor');
-
-/*function getJSONData() {
-    var xhttp = new XMLHttpRequest();
-    
-    xhttp.onreadystatechange = function() {
-        if(this.readyState == 4 && this.status == 200) {
-            var response = JSON.parse(xhttp.responseText);
-            console.log(response);
-            /*var wednesday = response.Wednesday;
-            console.log(wednesday);
-            var str = '';
-            wednesday.forEach(cur => {
-                str += '<p>' + cur.time + '</p>';
-            });       
-
-            scheduleTime.innerHTML = str;
-            console.log(str);
-        } else {
-            console.log('readystate is ' + this.readyState);
-            console.log('status is ' + this.status);
-            console.log('nope');
-        }
-    };
-    xhttp.open("GET", "schedule.json", true);
-    xhttp.send();
-    return response;
-}*/
+var day = document.querySelectorAll('.day');
+var todayDayNum = new Date().getDay();
+var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 function loadText() {
-    // Create XHE Object
+    // Create XHR Object
     var xhr = new XMLHttpRequest();
     // Open - type, url/file, async
     xhr.open('GET', 'schedule.json', true);
@@ -119,40 +99,36 @@ function loadText() {
         if(this.status == 200) {
             var response = JSON.parse(xhr.responseText);
             console.log(response);
-            var scheduleText = '';
-            var checkDay = '';
-            for(var i in response) {
-                if(checkDay === response[i].day){
-                    checkDay = response[i].day;
-                    scheduleText += 
-                        '<div class="card">' +
-                            '<div class="card-body" id="scheduleInfo">' +
-                                '<div class="float-left">' +
-                                    '<p class="card-title" id="scheduleTime">' + response[i].time + '</p>' +
-                                    '<p class="card-text" id="scheduleClass">' + response[i].classType + '</p>' +
-                                    '<p class="card-text" id="scheduleInstructor">' + response[i].instructor + '</p>' +
-                                '</div>' +
-                                '<a href="#" class="btn btn-danger float-right">Sign Up</a>' +
-                            '</div>' +
-                        '</div>';
-                } else {
-                    checkDay = response[i].day;
-                    scheduleText += 
-                    '<div class="card mt-3">' +
-                        '<div class="card-header" id="scheduleDay">' + response[i].day + '</div>' +
-                            '<div class="card-body" id="scheduleInfo">' +
-                                '<div class="float-left">' +
-                                    '<p class="card-title" id="scheduleTime">' + response[i].time + '</p>' +
-                                    '<p class="card-text" id="scheduleClass">' + response[i].classType + '</p>' +
-                                    '<p class="card-text" id="scheduleInstructor">' + response[i].instructor + '</p>' +
-                                '</div>' +
-                                '<a href="#" class="btn btn-danger float-right">Sign Up</a>' +
-                            '</div>' + 
-                        '</div>' +
-                    '</div>';
+             // get index of today in schedule.json
+            var todayIndex;
+            response.forEach((cur, ind) => {
+                if(cur.day === days[todayDayNum]){
+                    todayIndex = ind;
                 }
-            }
-            scheduleInfo.innerHTML = scheduleText;
+            });
+            
+            // add class schedule to DOM starting with today
+            var scheduleTextInfo = addClassSchedule(response, todayIndex);
+            scheduleInfo.innerHTML = scheduleTextInfo;
+            
+            // update class schedule starting from day of the week clicked in calendar
+            var dayNumClicked;
+            day.forEach(cur => {
+                cur.addEventListener('click', function() {
+                    var elClassName = this.className;
+                    var dayClicked = elClassName.split(" ").pop();
+                    var dayClickedIndex;
+                    for(var i = 0; i < response.length; i++) {
+                        if(response[i].day === dayClicked) {
+                            dayClickedIndex = i;
+                            break;
+                        }
+                    }
+                
+                    scheduleTextInfo = addClassSchedule(response, dayClickedIndex);
+                    scheduleInfo.innerHTML = scheduleTextInfo;                    
+                });
+            });
         }
     }
     
@@ -166,19 +142,48 @@ function loadText() {
 
 loadText();
 
-function setSchedule() {
-    let today = new Date().getDay();
-    let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    scheduleDay.innerHTML = days[today];
+function addClassSchedule(data, day) {
+
+    var scheduleText = '';
+    var j = day; 
+    
+    // loop through schedule.json and add class info to the DOM
+    var checkDay = '';
+    for(var i = 0; i < data.length; i++) {
+        if(checkDay === data[j].day){
+            checkDay = data[j].day;
+            scheduleText += 
+                '<div class="card">' +
+                    '<div class="card-body" id="scheduleInfo">' +
+                        '<div class="float-left">' +
+                            '<p class="card-title" id="scheduleTime">' + data[j].time + '</p>' +
+                            '<p class="card-text" id="scheduleClass">' + data[j].classType + '</p>' +
+                            '<p class="card-text" id="scheduleInstructor">' + data[j].instructor + '</p>' +
+                        '</div>' +
+                        '<a href="#" class="btn btn-danger float-right">Sign Up</a>' +
+                    '</div>' +
+                '</div>';
+        } else {
+            checkDay = data[j].day;
+            scheduleText += 
+            '<div class="card mt-3">' +
+                '<div class="card-header" id="scheduleDay">' + data[j].day + '</div>' +
+                    '<div class="card-body" id="scheduleInfo">' +
+                        '<div class="float-left">' +
+                            '<p class="card-title" id="scheduleTime">' + data[j].time + '</p>' +
+                            '<p class="card-text" id="scheduleClass">' + data[j].classType + '</p>' +
+                            '<p class="card-text" id="scheduleInstructor">' + data[j].instructor + '</p>' +
+                        '</div>' +
+                        '<a href="#" class="btn btn-danger float-right">Sign Up</a>' +
+                    '</div>' + 
+                '</div>' +
+            '</div>';
+        }
+        j++;
+        j = (j === data.length) ? 0 : j;
+    }
+    return scheduleText;
 }
-setSchedule();
-
-
-window.onclick = function(e) {
-    console.log(e);
-    scheduleDay.innerHTML = e.srcElement.className;
-}
-
 
 
 
