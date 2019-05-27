@@ -170,7 +170,8 @@ body {
   background-repeat: no-repeat;
   min-height: 500px; }
   #schedule-header .dark-overlay {
-    min-height: 500px; }
+    min-height: 500px;
+    background: rgba(0,0,0,0.2); }
   #schedule-header .schedule-inner {
     position: absolute;
     top: 60%;
