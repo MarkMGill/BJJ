@@ -48,8 +48,10 @@ function showCalendar(month, year) {
                 let curYear = today.getFullYear();
                 if(todayDate === date && curMonth === currentMonth && curYear === currentYear) {
                     cell.setAttribute('class', 'bg-light day ' + daysOfWeek[counter]);
+                    cell.setAttribute('style', 'cursor: pointer;');
                 } else {
                     cell.setAttribute('class', 'day ' + daysOfWeek[counter]);
+                    cell.setAttribute('style', 'cursor: pointer;');
                 }
                 let cellText = document.createTextNode(date);
                 cell.appendChild(cellText);
@@ -60,7 +62,8 @@ function showCalendar(month, year) {
             }
         }
         tbl.appendChild(row);
-    }    
+    } 
+    loadClassSchedule();
 }
 
 // show previous month on click
@@ -85,11 +88,10 @@ var scheduleInfo = document.getElementById('scheduleInfo');
 var scheduleTime = document.getElementById('scheduleTime');
 var scheduleClass = document.getElementById('scheduleClass');
 var scheduleInstructor = document.getElementById('scheduleInstructor');
-var day = document.querySelectorAll('.day');
 var todayDayNum = new Date().getDay();
 var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
-function loadText() {
+function loadClassSchedule() {
     // Create XHR Object
     var xhr = new XMLHttpRequest();
     // Open - type, url/file, async
@@ -98,7 +100,7 @@ function loadText() {
     xhr.onload = function() {
         if(this.status == 200) {
             var response = JSON.parse(xhr.responseText);
-            console.log(response);
+            
              // get index of today in schedule.json
             var todayIndex;
             response.forEach((cur, ind) => {
@@ -113,6 +115,7 @@ function loadText() {
             
             // update class schedule starting from day of the week clicked in calendar
             var dayNumClicked;
+            var day = document.querySelectorAll('.day');
             day.forEach(cur => {
                 cur.addEventListener('click', function() {
                     var elClassName = this.className;
@@ -138,9 +141,8 @@ function loadText() {
     
     // Sends request
     xhr.send();
+    
 }
-
-loadText();
 
 function addClassSchedule(data, day) {
 
@@ -185,6 +187,9 @@ function addClassSchedule(data, day) {
     return scheduleText;
 }
 
+/*window.onclick = function(e) {
+    console.log(e);
+}*/
 
 
 
