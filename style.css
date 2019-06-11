@@ -21,7 +21,7 @@ body {
   position: relative;
   height: 400px;
   width: 100%;
-  background-image: url(BJJ2.jpg);
+  background-image: url(../CSS/img/BJJ2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -165,13 +165,13 @@ body {
 /******* SCHEDULE PAGE *******/
 /*****************************/
 #schedule-header {
-  background: url(BJJ5.jpg);
+  background: url(../CSS/img/BJJ5.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 500px; }
   #schedule-header .dark-overlay {
     min-height: 500px;
-    background: rgba(0,0,0,0.4); }
+    background: rgba(0, 0, 0, 0.4); }
   #schedule-header .schedule-inner {
     position: absolute;
     top: 60%;
@@ -182,4 +182,39 @@ body {
       font-weight: 400; }
     #schedule-header .schedule-inner h5 {
       font-size: 1.5em; }
-}
+
+/*****************************/
+/******* CONTACT PAGE *******/
+/*****************************/
+#contact-header {
+  background: url(../CSS/img/BJJ5.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 500px; }
+  #contact-header .dark-overlay {
+    min-height: 500px;
+    background: rgba(0, 0, 0, 0.4); }
+  #contact-header .contact-inner {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -60%); }
+    #contact-header .contact-inner h2 {
+      font-size: 4em;
+      font-weight: 400; }
+    #contact-header .contact-inner h5 {
+      font-size: 1.5em; }
+
+#contact-section ul {
+  list-style: none; }
+  #contact-section ul li {
+    margin-left: -2.5rem; }
+#contact-section .jumbotron {
+  margin-left: 3rem; }
+
+#contact-map .contact-info {
+  margin-left: 3rem; }
+
+#contact-map #map {
+  height: 400px;
+  width: 100%; }

@@ -47,6 +47,10 @@
     #schedule-header .schedule-inner h5 {
         font-size: 1.25em; 
     }
+    #contact-section .jumbotron, #contact-map .contact-info {
+        margin-left: 0;
+    }
+    
 }
 
 /* Small phones to small tablets: from 481px to 600px */
