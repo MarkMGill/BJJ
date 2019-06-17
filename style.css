@@ -67,7 +67,7 @@ body {
   position: relative;
   height: 400px;
   width: 100%;
-  background-image: url(../CSS/img/BJJ2.jpg);
+  background-image: url(BJJ2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -212,7 +212,7 @@ body {
 /******* SCHEDULE PAGE *******/
 /*****************************/
 #schedule-header {
-  background: url(../CSS/img/BJJ5.jpg);
+  background: url(BJJ5.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 500px; }
@@ -234,7 +234,7 @@ body {
 /******* CONTACT PAGE *******/
 /*****************************/
 #contact-header {
-  background: url(../CSS/img/BJJ5.jpg);
+  background: url(BJJ5.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 500px; }
