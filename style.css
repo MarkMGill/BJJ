@@ -3,6 +3,52 @@ body {
   color: #fff;
   overflow-x: hidden; }
 
+.navbar {
+  background-color: rgba(0, 0, 0, 0.4); }
+  .navbar .btn {
+    font-size: 0.75rem;
+    border-color: #17aa1c; }
+  .navbar .dropdown-menu {
+    background-color: rgba(0, 0, 0, 0.4); }
+    .navbar .dropdown-menu .dropdown-item {
+      text-align: center;
+      padding: 5px 10px;
+      color: #fff; }
+    .navbar .dropdown-menu .dropdown-item:hover {
+      color: #000; }
+  .navbar .dropdown-menu:hover {
+    background-color: rgba(0, 0, 0, 0.4); }
+
+@media (min-width: 992px) {
+  .animate {
+    animation-duration: 0.3s;
+    -webkit-animation-duration: 0.3s;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both; } }
+@keyframes slideIn {
+  0% {
+    transform: translateY(1rem);
+    opacity: 0; }
+  100% {
+    transform: translateY(0rem);
+    opacity: 1; }
+  0% {
+    transform: translateY(1rem);
+    opacity: 0; } }
+@-webkit-keyframes slideIn {
+  0% {
+    -webkit-transform: transform;
+    -webkit-opacity: 0; }
+  100% {
+    -webkit-transform: translateY(0);
+    -webkit-opacity: 1; }
+  0% {
+    -webkit-transform: translateY(1rem);
+    -webkit-opacity: 0; } }
+.slideIn {
+  -webkit-animation-name: slideIn;
+  animation-name: slideIn; }
+
 /*********************************/
 /***** REUSEABLE COMPONENTS ******/
 /*********************************/
@@ -21,13 +67,13 @@ body {
   position: relative;
   height: 400px;
   width: 100%;
-  background-image: url(BJJ2.jpg);
+  background-image: url(../CSS/img/BJJ2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
   min-height: 700px; }
   #home-section .home-inner {
-    padding-top: 150px; }
+    padding-top: 140px; }
   #home-section .fly-in-text {
     list-style: none;
     position: absolute;
@@ -107,7 +153,7 @@ body {
     list-style-type: none;
     padding-left: 1rem; }
   #text-section .row .list-checkmarks li:before {
-    font-family: 'Font Awesome 5 Free';
+    font-family: "Font Awesome 5 Free";
     font-weight: 900;
     content: "\f00c";
     margin: 0 10px 0 -28px;
@@ -166,7 +212,7 @@ body {
 /******* SCHEDULE PAGE *******/
 /*****************************/
 #schedule-header {
-  background: url(BJJ5.jpg);
+  background: url(../CSS/img/BJJ5.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 500px; }
@@ -188,7 +234,7 @@ body {
 /******* CONTACT PAGE *******/
 /*****************************/
 #contact-header {
-  background: url(BJJ5.jpg);
+  background: url(../CSS/img/BJJ5.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 500px; }
