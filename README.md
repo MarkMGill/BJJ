@@ -3,7 +3,7 @@ A website for a fictional Brazillian Jiu-Jitsu mixed-martial-arts school called 
 
 Site features Home page with following features:
 * Fly-in text using CSS
-* Information Section with image
+* Information section with image
 * Bootstrap carousel
 * Autoplay video that switches to image on medium and small screens
 * Fully responsive web design
