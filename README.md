@@ -26,7 +26,7 @@ Contact page features:
 * Responsive Web Design
 * JavaScript
 * Bootstrap
-* SASS mainly for code formatting as color scheme is not a focus in this portfolio project
+* SASS mainly for CSS formatting as color scheme is not a focus in this portfolio project
 * jQuery
 * AJAX
 * JSON
