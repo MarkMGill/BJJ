@@ -64,13 +64,13 @@
             <div class="row mb-3">
                 <div class="col-md-6 mt-5">
                     <h2 class="text-danger text-uppercase">Join the Strangler Family</h2>
-                    <form>
+                    <form id="contact-form" method="post" action="contact-form-handler.php">
                         <div class="form-group">
-                            <input class="form-control mt-3" type="text" id="name" placeholder="Enter name">
-                            <input class="form-control mt-3" type="email" id="email" placeholder="Enter email">
-                            <input class="form-control mt-3" id="subject" type="text" placeholder="Subject">
-                            <textarea class="form-control mt-3" id="message" rows="6" placeholder="Your message"></textarea>
-                            <button class="btn btn-danger btn-lg mt-3" type="button">Send Message</button>
+                            <input name="name" class="form-control mt-3" type="text" id="name" placeholder="Enter name" required>
+                            <input name="mail" class="form-control mt-3" type="email" id="email" placeholder="Enter email" required>
+                            <input name="subject" class="form-control mt-3" id="subject" type="text" placeholder="Subject">
+                            <textarea name="message" class="form-control mt-3" id="message" rows="6" placeholder="Your message" required></textarea>
+                            <button name="submit" class="btn btn-danger btn-lg mt-3" type="submit">Send Message</button>
                         </div>
                     </form>
                 </div>
