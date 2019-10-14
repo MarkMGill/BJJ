@@ -187,9 +187,7 @@ function addClassSchedule(data, day) {
     return scheduleText;
 }
 
-/*window.onclick = function(e) {
-    console.log(e);
-}*/
+
 
 
 
